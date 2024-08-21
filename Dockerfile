@@ -1,4 +1,4 @@
-ARG OPENTOFU_VERSION=1.6.0
+ARG OPENTOFU_VERSION=1.8.1
 
 #
 # Fetch
@@ -87,7 +87,7 @@ ENV LANG='en_US.UTF-8' \
     LC_ALL='en_US.UTF-8'
 
 # get kubectl for gavinbunney/kubectl provider
-RUN KUBECTL_VER="v1.25.5"; \
+RUN KUBECTL_VER="v1.30.1"; \
     curl -sfL https://dl.k8s.io/${KUBECTL_VER}/kubernetes-client-${TARGETOS}-${TARGETARCH}.tar.gz | \
         tar -xvzf - --strip-components=3 --no-same-owner -C /usr/bin/ kubernetes/client/bin/kubectl
 
