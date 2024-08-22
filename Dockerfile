@@ -3,7 +3,7 @@ ARG OPENTOFU_VERSION=1.8.1
 #
 # Fetch
 #
-FROM --platform=$TARGETPLATFORM ghcr.io/opentofu/opentofu:${OPENTOFU_VERSION} AS fetch
+FROM ghcr.io/opentofu/opentofu:${OPENTOFU_VERSION} AS fetch
 
 # alias tofu to terraform
 RUN set -eo pipefail; \
@@ -57,7 +57,7 @@ RUN set -eo pipefail; \
 #
 # Release
 #
-FROM --platform=$TARGETPLATFORM ghcr.io/opentofu/opentofu:${OPENTOFU_VERSION}
+FROM ghcr.io/opentofu/opentofu:${OPENTOFU_VERSION}
 LABEL maintainer="Seal Engineer Team <engineering@seal.io>"
 
 # alias tofu to terraform
